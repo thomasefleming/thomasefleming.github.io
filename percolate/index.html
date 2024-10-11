@@ -81,9 +81,9 @@
                 text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
             }
         }
-        .glow-o, .glow-percolate {
+        .glow-o {
         color: rgba(191, 160, 101, 1) !important;
-        font-size: 1.2em; /* Match the size of other header links */
+        font-size: 1.2em;
         text-shadow: 0 0 5px rgba(191, 160, 101, 0.7),
                      0 0 10px rgba(191, 160, 101, 0.7),
                      0 0 15px rgba(191, 160, 101, 0.7),
@@ -91,9 +91,27 @@
         transition: all 0.3s ease;
         animation: none !important;
     }
-    .glow-o:hover, .glow-percolate:hover {
+    .glow-percolate {
         color: rgba(191, 160, 101, 1) !important;
-        font-size: 1.2em; /* Match the size of other header links */
+        font-size: 1.8em; /* Increased from 1.2em to 1.8em to match .glow-chips */
+        text-shadow: 0 0 5px rgba(191, 160, 101, 0.7),
+                     0 0 10px rgba(191, 160, 101, 0.7),
+                     0 0 15px rgba(191, 160, 101, 0.7),
+                     0 0 20px rgba(191, 160, 101, 0.7) !important;
+        transition: all 0.3s ease;
+        animation: none !important;
+    }
+    .glow-o:hover {
+        color: rgba(191, 160, 101, 1) !important;
+        font-size: 1.2em;
+        text-shadow: 0 0 10px rgba(191, 160, 101, 0.9),
+                     0 0 20px rgba(191, 160, 101, 0.9),
+                     0 0 30px rgba(191, 160, 101, 0.9),
+                     0 0 40px rgba(191, 160, 101, 0.9) !important;
+    }
+    .glow-percolate:hover {
+        color: rgba(191, 160, 101, 1) !important;
+        font-size: 1.8em; /* Increased from 1.2em to 1.8em to match .glow-chips */
         text-shadow: 0 0 10px rgba(191, 160, 101, 0.9),
                      0 0 20px rgba(191, 160, 101, 0.9),
                      0 0 30px rgba(191, 160, 101, 0.9),

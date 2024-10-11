@@ -75,7 +75,7 @@
                 text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
             }
         }
-        .glow-o-unlinear, .glow-unlinear {
+        .glow-o-unlinear {
         color: rgba(255, 75, 133, 1) !important;
         font-size: 1.2em;
         text-shadow: 0 0 5px rgba(255, 75, 133, 0.7),
@@ -85,9 +85,27 @@
         transition: all 0.3s ease;
         animation: none !important;
     }
-    .glow-o-unlinear:hover, .glow-unlinear:hover {
+    .glow-unlinear {
+        color: rgba(255, 75, 133, 1) !important;
+        font-size: 1.8em; /* Increased from 1.2em to 1.8em to match .glow-chips and .glow-percolate */
+        text-shadow: 0 0 5px rgba(255, 75, 133, 0.7),
+                     0 0 10px rgba(255, 75, 133, 0.7),
+                     0 0 15px rgba(255, 75, 133, 0.7),
+                     0 0 20px rgba(255, 75, 133, 0.7) !important;
+        transition: all 0.3s ease;
+        animation: none !important;
+    }
+    .glow-o-unlinear:hover {
         color: rgba(255, 75, 133, 1) !important;
         font-size: 1.2em;
+        text-shadow: 0 0 10px rgba(255, 75, 133, 0.9),
+                     0 0 20px rgba(255, 75, 133, 0.9),
+                     0 0 30px rgba(255, 75, 133, 0.9),
+                     0 0 40px rgba(255, 75, 133, 0.9) !important;
+    }
+    .glow-unlinear:hover {
+        color: rgba(255, 75, 133, 1) !important;
+        font-size: 1.8em; /* Increased from 1.2em to 1.8em to match .glow-chips and .glow-percolate */
         text-shadow: 0 0 10px rgba(255, 75, 133, 0.9),
                      0 0 20px rgba(255, 75, 133, 0.9),
                      0 0 30px rgba(255, 75, 133, 0.9),

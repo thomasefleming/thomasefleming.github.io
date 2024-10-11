@@ -24,6 +24,7 @@
     .chiclet-table a {
         color: black;
     }
+
     .highlight-link {
         color: rgba(0, 255, 0, 0.7);
         text-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
@@ -76,7 +77,7 @@
             text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
         }
     }
-    .glow-o-chips, .glow-chips {
+    .glow-o-chips {
     color: rgba(86, 241, 255, 1)!important;
     font-size: 1.2em;
     text-shadow: 0 0 5px rgba(86, 241, 255, 0.7),
@@ -86,13 +87,35 @@
     transition: all 0.3s ease;
     animation: none !important;
 }
-.glow-o-chips:hover, .glow-chips:hover {
+
+.glow-chips {
+    color: rgba(86, 241, 255, 1)!important;
+    font-size: 1.8em; /* Increased from 1.2em to 1.5em */
+    text-shadow: 0 0 5px rgba(86, 241, 255, 0.7),
+                 0 0 10px rgba(86, 241, 255, 0.7),
+                 0 0 15px rgba(86, 241, 255, 0.7),
+                 0 0 20px rgba(86, 241, 255, 0.7) !important;
+    transition: all 0.3s ease;
+    animation: none !important;
+}
+
+.glow-o-chips:hover {
     color: rgba(86, 241, 255, 1)!important;
     font-size: 1.2em;
-    text-shadow: 0 0 10px rgba(86, 241, 255, 0.9),
-                 0 0 20px rgba(86, 241, 255, 0.9),
-                 0 0 30px rgba(86, 241, 255, 0.9),
-                 0 0 40px rgba(86, 241, 255, 0.9) !important;
+    text-shadow: 0 0 10px rgba(86, 241, 255, 0.7),
+                 0 0 20px rgba(86, 241, 255, 0.7),
+                 0 0 30px rgba(86, 241, 255, 0.7),
+                 0 0 40px rgba(86, 241, 255, 0.7) !important;
+}
+
+.glow-chips:hover {
+    color: rgba(86, 241, 255, 1)!important;
+    font-size: 1.8em; /* Increased from 1.2em to 1.5em */
+    text-shadow: 0 0 10px rgba(86, 241, 255, 0.7),
+                 0 0 20px rgba(86, 241, 255, 0.7),
+                 0 0 30px rgba(86, 241, 255, 0.7),
+                 0 0 40px rgba(86, 241, 255, 0.7) !important;
+}
 }
 
 /* Add a subtle animation to enhance the glow effect */
