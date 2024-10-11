@@ -98,32 +98,6 @@
     .glow-o, .glow-percolate {
         animation: subtleGlow 2s ease-in-out infinite !important;
     }
-
-    /* New media query for mobile devices */
-    @media screen and (max-width: 768px) {
-        .header-link-main {
-            font-size: 0.6em; /* Half the original size */
-        }
-        
-        /* Adjust other header elements if needed */
-        .header-link, .toronto-text {
-            font-size: 0.8em;
-        }
-        
-        /* Ensure the header stays on one line */
-        .page-header h1 {
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* Internet Explorer 10+ */
-        }
-        
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .page-header h1::-webkit-scrollbar {
-            display: none;
-        }
-    }
     </style>
 </head>
 <body>
