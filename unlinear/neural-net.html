@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Neuron-like Animation with Correct Color Mixing</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: black; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <canvas id="animationCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('animationCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const colors = ['#FF0000', '#FFFF00', '#0000FF'];
+        const dots = [];
+        const connections = [];
+
+        class Dot {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.baseRadius = 5;
+                this.radius = this.baseRadius;
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+                this.diffuseState = 0;
+                this.diffuseSpeed = 0.05;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                this.diffuseState += this.diffuseSpeed;
+                this.radius = this.baseRadius + Math.sin(this.diffuseState) * 3;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        class Connection {
+            constructor(dot1, dot2) {
+                this.dot1 = dot1;
+                this.dot2 = dot2;
+                this.life = 0;
+                this.color = mixColors(dot1.color, dot2.color);
+            }
+
+            update() {
+                this.life++;
+            }
+
+            draw() {
+                const alpha = Math.max(0, 1 - this.life / 60);
+                ctx.beginPath();
+                ctx.moveTo(this.dot1.x, this.dot1.y);
+                ctx.lineTo(this.dot2.x, this.dot2.y);
+                ctx.strokeStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${alpha})`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        }
+
+        function mixColors(color1, color2) {
+            const c1 = hexToRgb(color1);
+            const c2 = hexToRgb(color2);
+            
+            // Predefined color mixing for primary colors
+            if ((c1.r === 255 && c1.g === 255 && c2.b === 255) || 
+                (c2.r === 255 && c2.g === 255 && c1.b === 255)) {
+                // Yellow + Blue = Green
+                return { r: 0, g: 255, b: 0 };
+            } else if ((c1.r === 255 && c1.g === 255 && c2.r === 255) || 
+                       (c2.r === 255 && c2.g === 255 && c1.r === 255)) {
+                // Yellow + Red = Orange
+                return { r: 255, g: 165, b: 0 };
+            } else if ((c1.r === 255 && c2.b === 255) || (c2.r === 255 && c1.b === 255)) {
+                // Red + Blue = Purple
+                return { r: 128, g: 0, b: 128 };
+            }
+            
+            // Default to averaging if not a predefined mix
+            return {
+                r: Math.round((c1.r + c2.r) / 2),
+                g: Math.round((c1.g + c2.g) / 2),
+                b: Math.round((c1.b + c2.b) / 2)
+            };
+        }
+
+        function hexToRgb(hex) {
+            const bigint = parseInt(hex.slice(1), 16);
+            return {
+                r: (bigint >> 16) & 255,
+                g: (bigint >> 8) & 255,
+                b: bigint & 255
+            };
+        }
+
+        function init() {
+            for (let i = 0; i < 3; i++) {
+                dots.push(new Dot(
+                    Math.random() * canvas.width,
+                    Math.random() * canvas.height,
+                    colors[i]
+                ));
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            dots.forEach(dot => {
+                dot.update();
+                dot.draw();
+            });
+
+            if (Math.random() < 0.1) {
+                const dot1 = dots[Math.floor(Math.random() * dots.length)];
+                const dot2 = dots[Math.floor(Math.random() * dots.length)];
+                if (dot1 !== dot2) {
+                    connections.push(new Connection(dot1, dot2));
+                }
+            }
+
+            connections.forEach((connection, index) => {
+                connection.update();
+                connection.draw();
+                if (connection.life > 60) {
+                    connections.splice(index, 1);
+                }
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
