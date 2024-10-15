@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thomas e fleming &middot; toronto</title>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chiclet-container {
+            position: relative;
+            width: 100%;
+            margin-top: 15px;
+    
+        }
+        .chiclet-image {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        .attribution-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0;
+            text-align: center;
+        }
+        .attribution-container p {
+            margin: 0;
+            color: white;
+            font-size: 9px;
+        }
+        .attribution-container a {
+            color: rgba(0, 255, 0, 0.7);
+            text-decoration: none;
+        }
+        .iframe-container {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .embedded-iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+
+        .blog-iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            padding: 0; /* Ensure there is no internal padding */
+            margin: 0; /* Remove margin to ensure the iframe takes up the full width of its container */
+        }
+        .header-link, .toronto-text {
+        color: rgba(105, 105, 105, 0.5); /* Even darker grey */
+        font-size: 1em;
+        text-shadow: 0 0 8px rgba(105, 105, 105, 0.5);
+    }
+
+    .header-link-main {
+        font-size: 1.2em;
+        color: rgba(105, 105, 105, 0.5); /* Default grey */
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .header-link-main:hover,
+    .header-link-main:focus {
+        color: rgba(0, 255, 0, 0.7);
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(3, 3, 3, 0.7);
+    }
+
+    .bio-image {
+  width: auto;
+  height: 120px;
+  aspect-ratio: 3/4;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 10px; /* Matching rounding for a consistent style */
+}
+
+    .highlight-link {
+        color: rgba(0, 255, 0, 0.7);
+        text-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .highlight-link:hover,
+    .highlight-link:focus {
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+    }
+
+.glow-initial {
+  color: rgba(0, 255, 0, 0.7);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+  animation: initialGlow 5s forwards;
+}
+
+@keyframes initialGlow {
+  0%, 80% {
+    color: rgba(0, 255, 0, 0.7);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+  }
+  100% {
+    color: rgba(105, 105, 105, 0.5);
+    text-shadow: none;
+  }
+}
+
+.highlight-link {
+  animation: torontoGlow 7s forwards;
+}
+
+@keyframes torontoGlow {
+  0%, 60% {
+    color: rgba(105, 105, 105, 0.5);
+    text-shadow: none;
+  }
+  80%, 100% {
+    color: rgba(0, 255, 0, 0.7);
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+  }
+}
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+
+            <div class="container">
+                <header class="page-header">
+                    <h1 style="display: flex; align-items: center;">
+                        <a href="https://thomasefleming.ca" class="header-link header-link-main glow-initial">thomasefleming.ca&nbsp;&nbsp;</a>
+                        <span class="toronto-text">&nbsp;t&nbsp;</span>
+                        <a href="percolate/" class="header-link highlight-link">o&nbsp;</a>
+                        <span class="toronto-text">r&nbsp;</span>
+                        <a href="chips/" class="header-link highlight-link">o&nbsp;</a>
+                        <span class="toronto-text">n&nbsp;t</span>
+                        <a href="unlinear/" class="header-link highlight-link">&nbsp;o</a>
+                    </h1>
+                </header>
+        <main>
+            <div class="chiclet-container" style="--chiclet-bg-color: rgba(0, 255, 0, 0.7);">
+                <img class="chiclet-image" alt="Clickable Image" src="img/mov/NeuralNet-Xponential.gif">
+                <div class="attribution-container">
+                    <p>Neural net animation by Xponential · <a href="https://youtube.com/@xponentialdesign?si=yxkIguhRu5ba_PeF" target="_blank">View more</a></p>
+                </div>
+                <table class="chiclet-table">
+                    <tr>
+                        <td>
+                            <div class="bio-container">
+                                <a href="img/view/profile-image-display.html">
+                                    <img class="bio-image" alt="Thomas E Fleming" src="img/profile-image.png">
+                                </a>
+                                <div class="bio-text">
+                                    <b>I've got a <a href="unlinear/neural-net.html" class="hidden-link">💚</a> for tech, music, writing, books, films, series, art, natural philosophy, coding, data, design and my husband.</b>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="iframe-container">
+                <iframe src="iframes/blog.html" class="blog-iframe"></iframe>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thomas e fleming | toronto</title>
+    <script src="../scripts.js" defer></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .chiclet-container {
+            position: relative;
+            width: 100%;
+            margin-top: 15px;
+    
+        }
+        .chiclet-image {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        .chiclet-table a {
+            color: black;
+        }
+        
+        .highlight-link {
+            color: rgba(0, 255, 0, 0.7);
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        /* Refined styles for the header */
+        .page-header {
+            margin-bottom: 10px; /* Add a small margin at the bottom */
+        }
+        .header-link, .toronto-text {
+            color: rgba(105, 105, 105, 0.5);
+            font-size: 1.2em;
+            text-shadow: 0 0 8px rgba(105, 105, 105, 0.5);
+        }
+        .header-link-main {
+            font-size: 1.2em;
+            color: rgba(105, 105, 105, 0.5);
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .header-link-main:hover,
+        .header-link-main:focus {
+            color: rgba(0, 255, 0, 0.7);
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(3, 3, 3, 0.7);
+        }
+        .highlight-link:hover,
+        .highlight-link:focus {
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+        }
+        .glow-initial {
+            color: rgba(0, 255, 0, 0.7);
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+            animation: initialGlow 5s forwards;
+        }
+        @keyframes initialGlow {
+            0%, 80% {
+                color: rgba(0, 255, 0, 0.7);
+                text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+            }
+            100% {
+                color: rgba(105, 105, 105, 0.5);
+                text-shadow: none;
+            }
+        }
+        .highlight-link {
+            animation: torontoGlow 7s forwards;
+        }
+        @keyframes torontoGlow {
+            0%, 60% {
+                color: rgba(105, 105, 105, 0.5);
+                text-shadow: none;
+            }
+            80%, 100% {
+                color: rgba(0, 255, 0, 0.7);
+                text-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 0.7);
+            }
+        }
+        .glow-o {
+        color: rgba(191, 160, 101, 1) !important;
+        font-size: 1.2em;
+        text-shadow: 0 0 5px rgba(191, 160, 101, 0.7),
+                     0 0 10px rgba(191, 160, 101, 0.7),
+                     0 0 15px rgba(191, 160, 101, 0.7),
+                     0 0 20px rgba(191, 160, 101, 0.7) !important;
+        transition: all 0.3s ease;
+        animation: none !important;
+    }
+    .glow-percolate {
+        color: rgba(191, 160, 101, 1) !important;
+        font-size: 1.8em; /* Increased from 1.2em to 1.8em to match .glow-chips */
+        text-shadow: 0 0 5px rgba(191, 160, 101, 0.7),
+                     0 0 10px rgba(191, 160, 101, 0.7),
+                     0 0 15px rgba(191, 160, 101, 0.7),
+                     0 0 20px rgba(191, 160, 101, 0.7) !important;
+        transition: all 0.3s ease;
+        animation: none !important;
+    }
+    .glow-o:hover {
+        color: rgba(191, 160, 101, 1) !important;
+        font-size: 1.2em;
+        text-shadow: 0 0 10px rgba(191, 160, 101, 0.9),
+                     0 0 20px rgba(191, 160, 101, 0.9),
+                     0 0 30px rgba(191, 160, 101, 0.9),
+                     0 0 40px rgba(191, 160, 101, 0.9) !important;
+    }
+    .glow-percolate:hover {
+        color: rgba(191, 160, 101, 1) !important;
+        font-size: 1.8em; /* Increased from 1.2em to 1.8em to match .glow-chips */
+        text-shadow: 0 0 10px rgba(191, 160, 101, 0.9),
+                     0 0 20px rgba(191, 160, 101, 0.9),
+                     0 0 30px rgba(191, 160, 101, 0.9),
+                     0 0 40px rgba(191, 160, 101, 0.9) !important;
+    }
+
+    /* Add a subtle animation to enhance the glow effect */
+    @keyframes subtleGlow {
+        0%, 100% {
+            text-shadow: 0 0 5px rgba(191, 160, 101, 0.7),
+                         0 0 10px rgba(191, 160, 101, 0.7),
+                         0 0 15px rgba(191, 160, 101, 0.7),
+                         0 0 20px rgba(191, 160, 101, 0.7);
+        }
+        50% {
+            text-shadow: 0 0 10px rgba(191, 160, 101, 0.9),
+                         0 0 20px rgba(191, 160, 101, 0.9),
+                         0 0 30px rgba(191, 160, 101, 0.9),
+                         0 0 40px rgba(191, 160, 101, 0.9);
+        }
+    }
+
+    .glow-o, .glow-percolate {
+        animation: subtleGlow 2s ease-in-out infinite !important;
+    }
+    </style>
+</head>
+<body>
+        <div class="container">
+                    <header class="page-header">
+                        <h1 style="display: flex; align-items: center;">
+                            <a href="https://thomasefleming.ca" class="header-link header-link-main glow-initial">&nbsp;&nbsp;●&nbsp;&nbsp;</a>
+                            <a href="../percolate/" class="header-link highlight-link glow-o">&nbsp;o&nbsp;</a>
+                            <a href="../chips/" class="header-link highlight-link">&nbsp;o&nbsp;</a>
+
+                            <a href="../unlinear" class="header-link highlight-link">&nbsp;o&nbsp;</a>
+                            <a href="../percolate/" class="header-link highlight-link glow-percolate">&nbsp;p e r c o l a t e&nbsp;</a>
+                        </h1>
+                    </header>
+        <main> 
+            <!-- Wave Chiclets section -->
+              <div class="chiclet-container" style="--chiclet-bg-color: rgba(191, 160, 101, 0.7);">
+                <!--Insert link for animated gif beneath chiclets table-->
+                <img class="chiclet-image" alt="Clickable Image" src="../img/mov/percolate.gif">
+                <table class="chiclet-table">
+                    <tr>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                    </tr>
+                    <tr>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                    </tr>
+                    <tr>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                        <td class="chiclet"><a href="../nav/placeholder.html">placeholder</a></td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
