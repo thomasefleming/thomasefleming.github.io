@@ -1,0 +1,330 @@
+:root {
+  --header-link-color: #00b8ff;
+  --toronto-text-color: #00b8ff;
+  --chiclet-bg-color: rgba(255, 75, 133, 0.7);
+  --attribution-color: rgba(255, 75, 133, 0.7);
+  --hamburger-color: white; /* Default hamburger color */
+}
+
+body {
+  opacity: 0; /* Set default opacity to 0 for fade-in effect */
+  transition: opacity 1.5s ease;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0; /* Remove default body margin */
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px; /* Consistent right padding */
+  position: relative;
+}
+
+/* Header styles */
+.page-header {
+  display: flex;
+  align-items: center; /* Vertically centers the children */
+  justify-content: flex-start; /* Align items horizontally to the left */
+  gap: 5px; /* Reduce gap between hamburger and text */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  height: 60px; /* Set a fixed height */
+}
+
+.hamburger-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--hamburger-color);
+  background: none;
+  border: none;
+  outline: none;
+  display: block;
+  transition: color 0.3s, transform 0.3s;
+  height: 60px; /* Match the height of the header */
+  line-height: 60px; /* Vertically center the text */
+  padding: 0; /* Remove extra padding to align perfectly */
+  margin: 0; /* Ensure no extra margins are affecting alignment */
+}
+
+.hamburger-icon.clicked {
+  color: rgba(0, 255, 0, 0.9) !important; /* Darken the color slightly */
+  font-size: 1.1em !important; /* Increase font size slightly */
+  font-weight: bold !important; /* Make the text bold when clicked */
+}
+
+.page-header h1 {
+  margin: 0;
+  padding-left: 5px; /* Decrease left padding for closer alignment */
+  line-height: 60px; /* Adjust line height to align vertically */
+}
+
+.menu-items {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; /* Align the top of the menu to the bottom of the hamburger button */
+  left: 0; /* Align flush with the left edge of the hamburger icon */
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+  gap: 10px;
+  z-index: 10;
+}
+
+.menu-items a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+.menu-items a:hover,
+.submenu-item:hover {
+    color: rgba(0, 255, 0, 0.9) !important; /* Change text color when hovered */
+    font-weight: bold; /* Make text bold when hovered */
+}
+
+header h1 {
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+/* Default styles for thomas e fleming and toronto */
+.header-link-main,
+.highlight-link {
+  color: rgba(105, 105, 105, 0.5);
+  text-decoration: none;
+  font-size: 1.2em; /* Slightly larger for 'thomas e fleming' */
+  vertical-align: middle;
+  transition: color 2s ease, text-shadow 2s ease; /* Smooth transition */
+}
+
+/* Make sure the rest of the page still fades in nicely */
+body {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.toronto-text {
+  color: var(--toronto-text-color);
+  font-size: 1em; /* Keep 'toronto' slightly smaller */
+  vertical-align: middle;
+}
+
+#greeting {
+  margin: 20px 0;
+}
+
+.bio-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  background-color: rgba(0, 0, 0, 0.3); /* Set transparent background */
+  padding: 10px;
+  border-radius: 10px; /* Slight rounding to match your preferred style */
+  margin: 10px; /* Add margin to give some spacing around the container */
+}
+
+.bio-image-wrapper,
+.bio-text-wrapper {
+  display: flex;
+  align-items: center; /* Vertically center content */
+}
+
+.bio-image-wrapper {
+  flex: 0 0 auto; /* Image keeps its size */
+}
+
+.bio-text-wrapper {
+  flex: 1; /* Text takes up remaining space */
+  padding-left: 10px;
+}
+
+.bio-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 10px; /* Matching rounding for a consistent style */
+}
+
+.bio-text {
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.hidden-link {
+  color: black;
+  text-decoration: none;
+}
+
+/* Knitting page specific styles */
+.knitting-page .container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Adjust based on your image size */
+  height: auto;
+}
+
+.knitting-page img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.knitting-page .buttons-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Larger gap between buttons */
+}
+
+.knitting-page .button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.knitting-page .button img {
+  width: 300px; /* Increased width for better visibility */
+  max-width: 400px; /* Ensures the buttons don't get too large */
+  height: auto;
+  display: block;
+  opacity: 0.7; /* Persistent transparency */
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.knitting-page .button:hover img {
+  opacity: 0.5; /* Increase transparency slightly on hover */
+  transform: scale(1.1) rotate(0deg); /* Slightly larger */
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% { transform: scale(1.1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(5deg); }
+  50% { transform: scale(1.1) rotate(-5deg); }
+  75% { transform: scale(1.1) rotate(5deg); }
+  100% { transform: scale(1.1) rotate(0deg); }
+}
+
+/* Updated Chiclet styles */
+.chiclet-container {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.chiclet-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.chiclet-table {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+.chiclet {
+  background-color: var(--chiclet-bg-color);
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chiclet::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+  border-radius: 10px 10px 0 0;
+}
+
+.chiclet:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4);
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.chiclet a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Attribution styles */
+.attribution-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px 0 5px 0;
+  line-height: 1.2;
+}
+
+.attribution-container p {
+  margin: 0;
+  padding: 0 5px;
+  color: white;
+  font-size: 13px;
+}
+
+.attribution-container a {
+  color: rgba(0, 255, 0, 0.7);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('fonts/Orbitron-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('fonts/SpaceMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
