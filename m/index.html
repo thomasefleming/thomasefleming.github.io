@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas E. Fleming</title>
+    <style>
+        :root {
+            --primary-color: #d4a76a;
+            --secondary-color: #1a2c35;
+            --background-color: #f5efe6;
+            --text-color: #2c3440;
+            --link-color: #7c593c;
+            --link-hover-color: #b88b4a;
+            --accent-color: #324a5f;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            background-image: linear-gradient(180deg, rgba(26, 44, 53, 0.03) 0%, rgba(212, 167, 106, 0.07) 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, transparent, rgba(212, 167, 106, 0.1), transparent);
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+
+        h1 {
+            color: var(--background-color);
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .intro {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--primary-color);
+            backdrop-filter: blur(5px);
+        }
+
+        .year-section {
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .post-item {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .post-item:hover {
+            background: rgba(212, 167, 106, 0.1);
+            transform: translateX(4px);
+        }
+
+        .post-link {
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            display: block;
+            padding: 0.5rem;
+        }
+
+        .post-link:hover {
+            color: var(--link-hover-color);
+        }
+
+        /* New footer styles */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.75rem;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        footer:hover {
+            opacity: 1;
+        }
+
+        .zen-link {
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .zen-link:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .intro {
+                padding: 1.5rem;
+            }
+
+            .year-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="https://mastodon.social/@thomasefleming" alt="Thomas E. Fleming on Mastodon" style="text-decoration: none; color: inherit;">Thomas E. Fleming</a></h1>
+            <p class="tagline">Toronto, Canada</p>
+        </header>
+
+        <section class="year-section">
+            <h2>2025</h2>
+            <ul class="post-list">
+                <li class="post-item">
+                    <a href="./2025/0201.html" class="post-link">February 1 ·  AI Face-Off: Where Are They Now?</a>
+                </li>
+                <li class="post-item">
+                    <a href="#" class="post-link">January 15 ·  [PLACEHOLDER]]</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="year-section">
+            <h2>2024</h2>
+            <ul class="post-list">
+                <li class="post-item">
+                    <a href="#" class="post-link">November 30 · [PLACEHOLDER]</a>
+                </li>
+                <li class="post-item">
+                    <a href="#" class="post-link">July 22 · [PLACEHOLDER]</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="year-section">
+            <h2>2023</h2>
+            <ul class="post-list">
+                <li class="post-item">
+                    <a href="#" class="post-link">December 15 ·  [PLACEHOLDER]</a>
+                </li>
+                <li class="post-item">
+                    <a href="#" class="post-link">August 3 ·  [PLACEHOLDER]</a>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <a href="../index.html" class="zen-link">🪨</a>
+        </footer>
+    </div>
+</body>
+</html>

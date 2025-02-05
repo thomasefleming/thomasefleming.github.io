@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Resources - Thomas E. Fleming</title>
+    <style>
+        :root {
+            --primary-color: #d4a76a;
+            --secondary-color: #1a2c35;
+            --background-color: #f5efe6;
+            --text-color: #2c3440;
+            --link-color: #7c593c;
+            --link-hover-color: #b88b4a;
+            --accent-color: #324a5f;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            background-image: linear-gradient(180deg, rgba(26, 44, 53, 0.03) 0%, rgba(212, 167, 106, 0.07) 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-title {
+            color: var(--background-color);
+            font-size: 2.2rem;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .post-meta {
+            color: var(--primary-color);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .home-link {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .home-link:hover {
+            opacity: 1;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .article-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .references {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .references h2 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .reference-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .reference-item {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-left: 3px solid var(--primary-color);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .reference-link {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .reference-link:hover {
+            color: var(--link-hover-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.75rem;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+
+        footer:hover {
+            opacity: 1;
+        }
+
+        .zen-link {
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .zen-link:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .post-title {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .article-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="home-link">←</a>
+            <h1 class="post-title">Data Analysis Resources</h1>
+            <div class="post-meta">September 1, 2024 | Thomas E. Fleming</div>
+        </header>
+
+        <section class="content-section">
+            <div class="article-text">
+                <!-- Main content goes here -->
+                <p><i>The Economist</i> shares some of its latest data driven journalism, and sometimes even some code, in their weekly <i>Off the Charts</i> newsletter.</p>
+                
+                <p>In the August 27, 2024 edition, Marie Segger includes tips using the application R as well as a link to Norm Matloff's "no-thrills" R tutorial. Marie also shared a link to <i>The Economist</i>'s Github page which hosts the source code for their data visualisations of the war in Ukraine and other topics. These links are all in the Resources section below.</p>
+            
+                <p>Also below are some of my Bluesky lists of data accounts. Check my Bluesky profile for more data lists and lists covering other topics. In the list description, I also include a cross-link to the corresponding list on X; Bluesky is growing fast but unlike Mary Segger and much of <i>The Economist</i>'s data team, not everyone has moved over to the platform yet.</p> 
+            
+            </div>
+        </section>
+
+        <section class="references">
+            <h2>Resources</h2>
+            <ul class="reference-list">
+                <li class="reference-item">
+                    <a href="https://www.economist.com/newsletters/off-the-charts" class="reference-link"><i>The Economist</i>'s <i>Off the Charts</i> newsletter (subscription required)</a>
+                </li>
+                <li class="reference-item">
+                    <a href="https://bsky.app/profile/did:plc:tnkwjbuy4yzfqj3iepicu6vb/lists/3lbgfyx4ocy2e" class="reference-link">Data Visualization and Data Journalists (Bluesky list)</a>
+                </li>
+                <li class="reference-item">
+                    <a href="https://bsky.app/profile/did:plc:tnkwjbuy4yzfqj3iepicu6vb/lists/3lbggabcyoi2y" class="reference-link">Open Data Resources (Bluesky list)</a>
+                </li>
+                <li class="reference-item">
+                    <a href="https://www.r-project.org/" class="reference-link">R Project homepage (includes free sofware download link)</a>
+                </li>
+                <li class="reference-item">
+                    <a href="https://github.com/matloff/fasteR" class="reference-link">R Tutorial by Norm Matloff (Github)</a>
+                </li>
+                <li class="reference-item">
+                    <a href="https://github.com/TheEconomist/" class="reference-link"><i>The Economist</i> on Github</a>
+                </li>
+                <li class="reference-item">
+                    <a href="https://bsky.app/profile/mariesegger.bsky.social" class="reference-link">Marie Segger's Bluesky profile (includes Bluesky starter pack of <i>The Economist</i>'s data team)</a>
+                </li>
+                <!-- Add more references as needed -->
+            </ul>
+        </section>
+
+        <footer>
+            <a href="../../index.html" class="zen-link">🪨</a>
+        </footer>
+    </div>
+</body>
+</html>
